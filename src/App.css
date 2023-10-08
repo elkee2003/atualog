@@ -21,7 +21,7 @@ h5,
 h6,
 p{
     margin: 0;
-    color: #ffffff
+    color: #000000
 }
 
 :root{
@@ -105,6 +105,7 @@ h2{
     font-size:2.5rem;
     font-weight: 700;
     line-height: 58px;
+    color: #00ff00;
 }
 /* Heading 3 */
 h3{
@@ -133,7 +134,7 @@ h3{
 
 /* About Us */
 .section-title{
-    color: var(--white);
+    color: var(--bg-shade);
     font-size: 21px;
     text-align: center;
     font-style: normal;
@@ -141,12 +142,13 @@ h3{
     line-height: 32px;
     display: flex;
     align-items: flex-start;
+    padding-top: 25px;
 }
 
 /* Contact Us */
 .sub-title{
-    color:var(--heading-color);
-    font-size:16px;
+    color:var(--black);
+    font-size:1.3rem;
     font-weight: 600;
     line-height: 24px;
 }
@@ -159,8 +161,9 @@ h3{
     align-items: center;
     padding: 1.5rem 2rem;
     background-color: #080322;
-    box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5.333px 20px 0 rgba(167, 165, 165, 0.1);
     position: fixed;
+    z-index: 1;
     top:0;
     left: 0;
     right:0;
@@ -197,14 +200,33 @@ h3{
 }
 
 /* Hero Section style */
+.section-title-atua{
+    color: var(--white);
+    font-size: 2rem;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    display: flex;
+    align-items: flex-start;
+    position:relative;
+    animation: atua-title;
+    animation-duration: 3s;
+}
+
+.anime{
+    position:relative;
+    animation: atua-title;
+    animation-duration: 5s;
+}
 .hero-section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 133.33px 85.333px 133.333px;
+    padding: 133.33px 85.333px 100.333px;
     align-items: center;
     justify-content: space-between;
     gap: 32px;
-    background-color: var(--bg-shade);
+    background: url(../public/img/Atua\ Background.png) center/cover no-repeat;
 }
 .hero-section-content-box{
     display: flex;
@@ -218,8 +240,14 @@ h3{
     align-items: flex-start;
     gap: 21.333px;
 }
-.hero-section-content-box > button {
-    margin-top: 21.333px;
+.hero-section-btn {
+    margin-top: 17.333px;
+    position:relative;
+    opacity: 0;
+    animation: show;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
 }
 
 .hero-section-title-color{
@@ -241,12 +269,24 @@ h3{
 .hero-section-img > img{
     width: 100%;
     height: 100%;
+    animation: appear 6s ;
 }
 /* Hero section style ends */
+
+/* Section Description */
+.section-description{
+    text-align: center;
+    color: var(--black);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+}
+/* Section Description Ends */
 
 /* Services */
 .service-section {
     display: grid;
+    background: var(--white);
     padding: 133.333px 85.3px;
     align-items: center;
     gap:114.6px;
@@ -257,6 +297,12 @@ h3{
     height: 100%;
 
 }
+.card{
+    background: rgb(243, 243, 245);
+    padding:20px 40px;
+    border-radius: 15%;
+    box-shadow: 3px 9.333px 20px 0 rgba(0, 0, 0, 0.2);
+}
 /* Services Ends */
 
 /* About Us */
@@ -266,11 +312,17 @@ h3{
     align-items: center;
     gap:114.6px;
     grid-template-columns: repeat(2, 1fr);
-    background-color: var(--bg-shade);
+    background: rgb(243, 243, 245);
 }
 .about-section-img > img{
     width: 100%;
     height: 100%;
+}
+.card-about{
+    background: var(--white);
+    padding:20px 40px;
+    border-radius: 15%;
+    box-shadow: 3px 9.333px 20px 0 rgba(0, 0, 0, 0.2);
 }
 /* About Us Ends */
 
@@ -442,6 +494,7 @@ input[type='checkbox']{
         display: none;
     }
     .hero-section{
+        background: url(../public/img/Atua\ Background\ 900px.png) center/cover no-repeat;
         display: flex;
         flex-direction: column-reverse;
         padding-bottom: 50px;
@@ -510,15 +563,22 @@ input[type='checkbox']{
         padding-right: 50px;
     }
     .service-section {
+        display:flex;
+        flex-direction: column;
         padding-left: 50px;
         padding-right: 50px;
         align-items: center;
     }
     .about-section{
+        display: flex;
+        flex-direction: column;
         padding-top: 80px;
         padding-bottom: 0;
         padding-left: 50px;
         padding-right: 50px;
+    }
+    .about-section-img{
+        padding-bottom: 25px;
     }
     .contact-section{
         padding-left: 50px;
@@ -606,3 +666,39 @@ input[type='checkbox']{
     }
 }
 
+@keyframes appear {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+        left: - 1000px;
+    }
+
+    100%{
+        opacity: 1;
+        left:0px;
+    }
+    
+}
+
+@keyframes atua-title {
+    0%{
+        left:-1000px;
+    }
+
+    100%{
+        left:0px;
+    }
+    
+}

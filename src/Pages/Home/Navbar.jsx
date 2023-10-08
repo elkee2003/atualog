@@ -59,7 +59,7 @@ function Navbar() {
             duration={500}
             to='heroSection'
             className='navbar-content'>
-                <img src="./img/Atua Just Logo square without background.png" alt="Logo" width="60rem" />
+                <img src="./img/Atua logo square transparent.png" alt="Logo" width="60rem" />
             </Link>
             
         </div>
@@ -99,7 +99,7 @@ function Navbar() {
                     onClick={closeMenu} activeClass='navbar-active-content' 
                     spy={true} 
                     smooth={true} 
-                    offset={10} 
+                    offset={-30} 
                     duration={500}
                     to='aboutUs'
                     className='navbar-content'>
