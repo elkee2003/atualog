@@ -626,9 +626,9 @@ input[type='checkbox']{
         display: flex;
         z-index: 200;
     }
-    .navbar-items{
+    /* .navbar-items{
         display: flex;
-    }
+    } */
     .navbar-items{
         position: absolute;
         display: flex;
